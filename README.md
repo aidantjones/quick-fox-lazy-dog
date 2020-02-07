@@ -80,5 +80,3 @@ AT THE MACHINE
 Because I'm a big ol' nerd, I recently purchased an [Apple Extended Keyboard II](https://en.wikipedia.org/wiki/Apple_Extended_Keyboard). I started doing typing exercises to become acquainted with it (it's beautiful) which reminded of this hidden poetry.
 
 I've also started to learn basic front-end web development languages, including Javascript. It occurred to me that Javascript would be the perfect language to write this poetry generator in. The rest is history.
-
-test
