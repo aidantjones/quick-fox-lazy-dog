@@ -1,22 +1,31 @@
-function line_amount_generator(min, max) {
-  Math.floor(Math.random() * (10*(max - min + 1))) + min;
+// Random number generator
+function randomizer(min, max) {
+  return Math.floor(Math.random()*((max - min + 1))) + min;
 }
 
-var line_amount = line_amount_generator(4,25);
+// Line max for entire poem
+var lineMax = 25;
 
-var stanza_randomizer = line_amount_generator(1,11);
+// Generate max amount of stanzas for this instance
+var stanzaRandomizer = randomizer(1,11);
 
-var stanza_total += stanza_randomizer;
+var stanzaTotal = 0, lineAmount = 0, stanzaAmount = 0, lineTotal = 0;
+var poem = [];
 
-if stanza_total > line_amount {
- var last_return = str.lastIndexOf("\r");
- var last_return = null;
- function stringRandomizer()
-} else {
+// Loop that generates lines until line or stanza limit
+while (lineTotal <= lineMax && stanzaAmount <= stanzaRandomizer) {
+  // Generate random amount of lines
+  lineAmount = randomizer(4,25);
+  // Adds current stanza's line amount to the total
+  lineTotal += lineAmount;
+  // Pushes number of lines in current stanza to the poem's array
+  poem.push(lineAmount);
+  // Adds break after stanza
+  poem.push("<br>");
 
+  stanzaTotal++;
 }
 
+console.log(poem)
 
-
-console.log(final_poem)
 //document.getElementById("poem").innerHTML = final-poem;
