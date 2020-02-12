@@ -1,5 +1,5 @@
 // LIST OF STRINGS
-var stings = [
+var strings = [
   'Esther says she will stay with Sara till July',
   'At the pool we read this:',
   'Lifeguard Here Until Four',
@@ -183,6 +183,8 @@ var stings = [
   'Fall back!'
 ];
 
+function poemGenerator() {
+
 // Random number generator
 function randomizer(min, max) {
   return Math.floor(Math.random()*((max - min + 1))) + min;
@@ -194,33 +196,44 @@ var lineMax = 12;
 // Generate max amount of stanzas for this instance
 var stanzaRandomizer = randomizer(1,11);
 
-var stanzaTotal = 0, lineAmount = 0, stanzaAmount = 0, lineTotal = 0;
-var poem = [];
+var stanzaTotal = 0,
+    lineAmount = 0,
+    stanzaAmount = 0,
+    lineTotal = 0,
+    loopCounter = 0,
+    arrayPoem = ["<p>"],
+    finalPoem;
 
-// Loop that generates lines until line or stanza limit
-while (lineTotal < lineMax && stanzaAmount <= stanzaRandomizer) {
-  // Generate random amount of lines
-  lineAmount = randomizer(1,6);
-  // Adds current stanza's line amount to the total
-  lineTotal += lineAmount;
-  // Adds current amount of stanzas to the total
-  stanzaAmount++;
-  // Pushes number of lines in current stanza to the poem's array
-  poem.push(lineAmount);
-  // Adds break after stanza
-  poem.push("<br>");
-
-  stanzaTotal++;
+function poemStringGenerator() {
+  return strings[randomizer(1,strings.length)];
 }
 
-poem.pop();
 
-// var poemNumber = poem.filter(item => typeof item === 'number');
+finalPoem = '';
+// Loop that generates lines until line or stanza limit
+while (lineTotal < lineMax && stanzaAmount <= stanzaRandomizer) {
+    // Generate random amount of lines
+    lineAmount = randomizer(1,6);
+    // Adds current stanza's line amount to the total
+    lineTotal += lineAmount;
+    // Adds current amount of stanzas to the total
+    stanzaAmount++;
+    // Pushes in string numbers into stanzas based on lineAmount value
+    for (loopCounter = 0; loopCounter < lineAmount; loopCounter++) {
+      var poemString = poemStringGenerator();
+      arrayPoem.push(poemString);
+      arrayPoem.push('<br>');
+    }
+    // Adds break after stanzas
+    arrayPoem.push("<p>");
+    // Adds to stanza counter for loop
+    stanzaTotal++;
+  }
 
-// console.log(poemNumber);
-console.log(poem);
-// console.log(stanzaAmount);
-// console.log(lineAmount);
+// Takes off last <p>
+arrayPoem.pop();
 
-
-//document.getElementById("poem").innerHTML = final-poem;
+var stringPoem = arrayPoem.toString();
+finalPoem = stringPoem.replace(/,/g, '');
+return finalPoem;
+}
