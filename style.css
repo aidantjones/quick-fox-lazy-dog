@@ -1,0 +1,162 @@
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
+a {
+  color: #404040;
+}
+
+a:visited {
+  color: black;
+}
+
+body {
+  background-color: #f1eedc;
+}
+
+header {
+  text-align: center;
+  margin-top: 2rem;
+}
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 4rem;
+  margin-bottom: -1.5rem;
+  animation: fadein 4s;
+}
+
+button {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  background-color: #afafaf;
+  margin: auto;
+  margin-bottom: 4.1rem;
+  color: #414141;
+  padding-top: 1rem;
+  padding-bottom: .9rem;
+  width: 15rem;
+  transition-duration: .3s;
+  border-radius: .25rem;
+  animation: fadeindelay 2.5s;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  box-shadow: 0 .1rem #666;
+  transform: translateY(.25rem);
+  transform: scale(50px, 50px);
+}
+
+header h2 {
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 1.25rem;
+  margin-bottom: 4rem;
+  animation: fadeindelay 2s;
+}
+main {
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  margin-left: 31%;
+  margin-right: 35%;
+  width: 50%;
+  /*opacity: 0;*/
+}
+
+main h2 {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+#about {
+  margin: auto;
+  width: 50%;
+}
+
+#about h2 {
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+#about p {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+}
+
+#about li {
+  font-family: 'Lora', serif;
+}
+
+footer {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  font-family: 'Lora', serif;
+}
+
+footer img {
+  width: 2.5rem;
+}
+
+.icons {
+  opacity: .65;
+}
+
+#regularicons img:hover {
+  animation: fadeinfooter .6s forwards;
+}
+
+#copyrighttext {
+  margin-top: -.5rem;
+}
+
+#CC:hover {
+  animation: fadeinfooter .6s forwards;
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    line-height: 4.5rem;
+  }
+  main {
+    margin-left: 25%;
+  }
+  header h2 {
+    margin-top: 0rem;
+  }
+  #about {
+    margin: auto;
+    width: 75%;
+    font-family: 'Lora', serif;
+  }
+}
+
+@keyframes fadeindelay {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeinfooter {
+    from { opacity: .65; }
+    to { opacity: 1; }
+}

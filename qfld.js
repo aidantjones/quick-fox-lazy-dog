@@ -34,5 +34,12 @@ function poemGenerator() {
 
   arrayPoem.pop(); // Takes off last <p>
 
-  return arrayPoem.toString().replace(/,/g, ''); // Convert poem to string and remove commas
+  return arrayPoem.toString().replace(/,/g, '');
+ // Convert poem to string and remove commas
+}
+
+function displayAndFade() {
+  var poem = document.getElementById('finalPoem');
+  poem.innerHTML = poemGenerator();
+  poem.classList.add('fadein');
 }
