@@ -12,7 +12,7 @@
   <script type="text/javascript" src="qfld.js"></script>
 </head>
 
-<body>
+<body onload="console.log(poemFromSeed())">
   <header>
     <h1>
       Quick Fox, Lazy Dog
@@ -24,10 +24,11 @@
       Generate Poem
     </button>
   </header>
-  <main id="finalPoem"></main>
+  <main id="finalpoem"></main>
+  <section id="finalseed"></section>
   <section id="buttons">
-    <button id="copyseed">Share</button>
-    <button id="copyfoo">Copy Poem</button>
+    <button onclick="copyPoem()"><span id="copypoem">Copy Poem</span></button>
+    <button onclick="copySeed()"><span id="copyseed">Share this Poem</span></button>
   <section id="about">
     <h2>Philosophy</h2>
     <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words while some were intelligible but unnatural. This text from Uncanny Valley is an attempt to create a realistic typing

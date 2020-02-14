@@ -196,7 +196,7 @@ function poemGenerator() {
       stanzaAmount = 0,
       loopCounter = 0,
       arrayPoem = ["<h2>"],
-      seedPoem = ["h2"],
+      seedPoem = ["h"],
       stringNumber;
 
   function stringNumberGenerator() // Pulls random string
@@ -207,7 +207,7 @@ function poemGenerator() {
   var y = stringNumberGenerator();
 
   arrayPoem.push(strings[y], "</h2>");
-  seedPoem.push(y, "h2e");
+  seedPoem.push(y, "he");
 
   while (lineTotal < lineMax && stanzaAmount <= stanzaRandomizer) // Loop that generates lines until line or stanza limit
     {
@@ -233,51 +233,77 @@ function poemGenerator() {
  // Convert poem to string and remove commas
 }
 
+// GENERATE POEM
 function displayAndFade() {
-  var displayPoem = document.getElementById('finalPoem');
-  var x = poemGenerator();
-  var y = x[0];
-  var z = x[1];
-  var dummyText = document.createElement("dummyTextArea"),
-      dummySeed = document.createElement("dummySeedArea");
-  document.body.appendChild(dummyText);
-  document.body.appendChild(dummySeed);
-  dummyText.value = y;
-  dummySeed.value = z;
-  displayPoem.innerHTML = y;
+  var displayPoem = document.getElementById('finalpoem')
+  var displaySeed = document.getElementById('finalseed')
+  var poemArray = poemGenerator();
+  var displayPoemString = poemArray[0];
+  var displaySeedString = 'https://example.com/index.html?'.concat(poemArray[1].toString().replace(/,/g, ''));
+  displayPoem.innerHTML = displayPoemString;
+  displaySeed.innerText = displaySeedString;
   displayPoem.classList.add('fadein');
-
-  if(document.getElementById("copyfoo")){
-    document.getElementById("copyfoo").addEventListener("click", function() {
-    dummyText.select();
-    document.execCommand("copy");
-  });}
-
-  if(document.getElementById("copyseed")){
-    document.getElementById("copyseed").addEventListener("click", function() {
-      z.select();
-      document.execCommand("copy");
-  });}
+  console.log(displayPoemString);
+  console.log(displaySeedString);
 }
-/*
+
+// COPY POEM
 function copyPoem() {
-  var poem = document.getElementById('finalPoem');
-  poem.innerHTML.select(finalPoem[1]);
+  function buttonReset() {
+    var copyButton = document.getElementById("copypoem");
+    copyButton.innerHTML = "Copy Poem";
+  }
+  var copyText = document.getElementById("finalpoem");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(copyText);
+  selection.removeAllRanges();
+  selection.addRange(range);
   document.execCommand("copy");
+  selection.removeAllRanges();
+  var copyButton = document.getElementById("copypoem");
+  copyButton.innerHTML = "Copied!";
+  setTimeout(buttonReset, 2000);
 }
 
+// COPY SEED
 function copySeed() {
-  var poem = document.getElementById('finalPoem').innerHTML;
-  poem.select(finalPoem[1]);
+  function buttonReset() {
+    var copyButton = document.getElementById("copyseed");
+    copyButton.innerHTML = "Share";
+  }
+  var copyText = document.getElementById("finalseed");
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(copyText);
+  selection.removeAllRanges();
+  selection.addRange(range);
   document.execCommand("copy");
-}
-*/
-function getSeed() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  selection.removeAllRanges();
+  var copyButton = document.getElementById("copyseed");
+  copyButton.innerHTML = "Poem Link Copied!";
+  setTimeout(buttonReset, 3000);
 }
 
-var seed = getSeed()["s"];
+// GENERATE POEM FROM SEED
+function poemFromSeed() {
+    var parts = window.location.href.replace(/.*\?/, "");
+    /*var stringLocation = parts.search(/(\d+)/)
+    parts[stringLocation] = strings[stringLocation]*/
+    var newSeed = parts.split(/(\d+)/);
+    var reg = /(\d+)/;
+    var loopAmount = 0;
+    while (loopAmount < newSeed.length) {
+      var originalIndex = newSeed.findIndex(value => /(\d+)/.test(value)); // Finds index value of next available number in original array
+      var newSeedIndex = [];
+      newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
+      var newString = strings[newSeedIndex];
+      newSeedIndex = newString;
+      loopAmount++;
+    }
+
+    /*var newSeedLocation = newSeed.find(/(\d+)/);
+    newSeed.replace(newSeedLocation, strings[newSeedLocation]);*/
+    return newSeedIndex;
+    }
+    /* h2157h2e170b112b17bp73b165bp137b7b53bp12b116bp104bp125b66b70b172b96b13b */

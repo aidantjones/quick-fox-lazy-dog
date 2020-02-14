@@ -125,6 +125,12 @@ footer img {
   animation: fadeinfooter .6s forwards;
 }
 
+#finalseed {
+  position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+
 @media screen and (max-width: 750px) {
   h1 {
     width: 90%;
