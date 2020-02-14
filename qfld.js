@@ -295,15 +295,39 @@ function poemFromSeed() {
     var loopAmount = 0;
     while (loopAmount < newSeed.length) {
       var originalIndex = newSeed.findIndex(value => /(\d+)/.test(value)); // Finds index value of next available number in original array
-      var newSeedIndex = [];
-      newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
-      var newString = strings[newSeedIndex];
-      newSeedIndex = newString;
+      var newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
+      newSeed[originalIndex] = strings[newSeedIndex];
+
+      var originalBPEIndex = newSeed.findIndex(value => /bp/.test(value));
+      newSeed[originalBPEIndex] = "</p><p>";
+
+      var originalBIndex = newSeed.findIndex(value => /^b{1}$/.test(value));
+      newSeed[originalBIndex] = "<br>";
+
       loopAmount++;
     }
+    var hIndex = newSeed.findIndex(value => /h/.test(value));
+    newSeed[hIndex] = "<h2>";
 
-    /*var newSeedLocation = newSeed.find(/(\d+)/);
-    newSeed.replace(newSeedLocation, strings[newSeedLocation]);*/
-    return newSeedIndex;
+    var heIndex = newSeed.findIndex(value => /he/.test(value));
+    newSeed[heIndex] = "</h2><p>";
+
+    newSeed.length = (newSeed.length-1);
+
+    newSeed.push("</p>");
+
+    return newSeed.toString().replace(/,/g, '');
     }
-    /* h2157h2e170b112b17bp73b165bp137b7b53bp12b116bp104bp125b66b70b172b96b13b */
+console.log(poemFromSeed());
+    /* h2157h2e170b112b17bp73b165bp137b7b53bp12b116bp104bp125b66b70b172b96b13b    while (loopAmount < newSeed.length) {
+          var originalIndex = newSeed.findIndex(value => /(\d+)/.test(value)); // Finds index value of next available number in original array
+          var newSeedIndex = new Array(newSeed.length);
+          newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
+          var newString = [];
+          newString = [strings[newSeedIndex]];
+          newSeedIndex = newString;
+          loopAmount++;
+          debugger;
+        }
+
+    */
