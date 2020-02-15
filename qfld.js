@@ -206,7 +206,7 @@ function poemGenerator() {
 
   var y = stringNumberGenerator();
 
-  arrayPoem.push(strings[y], "</h2>");
+  arrayPoem.push(strings[y], "</h2><p>");
   seedPoem.push(y, "he");
 
   while (lineTotal < lineMax && stanzaAmount <= stanzaRandomizer) // Loop that generates lines until line or stanza limit
@@ -239,7 +239,7 @@ function displayAndFade() {
   var displaySeed = document.getElementById('finalseed')
   var poemArray = poemGenerator();
   var displayPoemString = poemArray[0];
-  var displaySeedString = 'https://example.com/index.html?'.concat(poemArray[1].toString().replace(/,/g, ''));
+  var displaySeedString = 'file:///Users/aidan/github/quick-fox-lazy-dog/index.html?'.concat(poemArray[1].toString().replace(/,/g, ''));
   displayPoem.innerHTML = displayPoemString;
   displaySeed.innerText = displaySeedString;
   displayPoem.classList.add('fadein');
@@ -288,17 +288,15 @@ function copySeed() {
 // GENERATE POEM FROM SEED
 function poemFromSeed() {
     var parts = window.location.href.replace(/.*\?/, "");
-    /*var stringLocation = parts.search(/(\d+)/)
-    parts[stringLocation] = strings[stringLocation]*/
     var newSeed = parts.split(/(\d+)/);
     var reg = /(\d+)/;
     var loopAmount = 0;
     while (loopAmount < newSeed.length) {
-      var originalIndex = newSeed.findIndex(value => /(\d+)/.test(value)); // Finds index value of next available number in original array
+      var originalIndex = newSeed.findIndex(value => /^\d+$/.test(value)); // Finds index value of next available number in original array
       var newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
       newSeed[originalIndex] = strings[newSeedIndex];
 
-      var originalBPEIndex = newSeed.findIndex(value => /bp/.test(value));
+      var originalBPEIndex = newSeed.findIndex(value => /^bp$/.test(value));
       newSeed[originalBPEIndex] = "</p><p>";
 
       var originalBIndex = newSeed.findIndex(value => /^b{1}$/.test(value));
@@ -306,28 +304,19 @@ function poemFromSeed() {
 
       loopAmount++;
     }
-    var hIndex = newSeed.findIndex(value => /h/.test(value));
+    var hIndex = newSeed.findIndex(value => /^h$/.test(value));
     newSeed[hIndex] = "<h2>";
 
-    var heIndex = newSeed.findIndex(value => /he/.test(value));
+    var heIndex = newSeed.findIndex(value => /^he$/.test(value));
     newSeed[heIndex] = "</h2><p>";
 
     newSeed.length = (newSeed.length-1);
 
     newSeed.push("</p>");
 
-    return newSeed.toString().replace(/,/g, '');
-    }
-console.log(poemFromSeed());
-    /* h2157h2e170b112b17bp73b165bp137b7b53bp12b116bp104bp125b66b70b172b96b13b    while (loopAmount < newSeed.length) {
-          var originalIndex = newSeed.findIndex(value => /(\d+)/.test(value)); // Finds index value of next available number in original array
-          var newSeedIndex = new Array(newSeed.length);
-          newSeedIndex = newSeed[originalIndex]; // Gets value in original array using the previous originalIndex
-          var newString = [];
-          newString = [strings[newSeedIndex]];
-          newSeedIndex = newString;
-          loopAmount++;
-          debugger;
-        }
+    var finalPoem = newSeed.toString().replace(/,/g, '');
 
-    */
+    document.getElementById("finalpoem").innerHTML = finalPoem;
+
+    return finalPoem;
+}

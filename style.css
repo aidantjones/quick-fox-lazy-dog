@@ -139,7 +139,8 @@ footer img {
     line-height: 4.5rem;
   }
   main {
-    margin-left: 25%;
+    margin: 5%;
+    width: 90%;
   }
   header h2 {
     margin-top: 0rem;
