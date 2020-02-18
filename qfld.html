@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Fox, Lazy Dog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dqk3cno.css">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/strings.js"></script>
+    <script type="text/javascript" src="js/qfld.js"></script>
+  </head>
+
+  <body onload="urlChecker()">
+    <a name="top"></a>
+    <header>
+      <img src="assets/qfld.svg" alt="Quick Fox, Lazy Dog logo">
+      <h1>
+        Quick Fox, Lazy Dog
+      </h1>
+      <h2 class="fadeindelay">
+        A poetry project by Aidan Jones
+      </h2>
+      <button onclick="displayAndFade()">
+        Generate Poem
+      </button>
+    </header>
+
+    <img class="divider hidden" alt="Text divider" src="assets/divider.svg">
+
+    <main id="finalpoem"></main>
+
+    <img class="divider hidden" alt="Text divider" src="assets/divider.svg">
+
+    <section id="finalseed"></section>
+    <section class="hidden" id="buttons">
+      <button onclick="copy('copypoem', 'Copy Poem', 'Copied!', 'finalpoem')"><span id="copypoem">Copy Poem</span></button>
+      <button onclick="copy('copyseed', 'Share this Poem', 'Link Copied!', 'finalseed')"><span id="copyseed">Share this Poem</span></button>
+    </section>
+
+    <section class="hidden" id="about">
+
+      <h3>Philosophy</h3>
+
+      <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words; some were intelligible but unnatural. This text from Uncanny Valley attempts to create a realistic typing scenario while still testing the skills learned in a particular lesson.</p>
+
+      <p>I noticed this offputting text and thought it would render endearing poetry. The tradition of found poetry and <a href="https://www.wired.co.uk/article/google-artificial-intelligence-poetry">AI's recent foray into poetic authorship</a> informed the idea for this project.</p>
+
+      <p>I wrote a program that randomly generates poetry from strings gathered from Mark's <em>Touch Typing Made Simple</em> as well as Lloyd, Winger, Johnson, Morrison, and Hall's <em>Gregg Keyboarding and Personal Application</em>, published in 1985 and 1987, respectively. Any set of strings could be used instead, however, providing opportunities to create diverse poetry.</p>
+
+      <p>The results are humorous but also thought-provoking. Typing exercises are not intended for use outside of touch typing practice. De-contextualizing them highlights how technology can change what we type and, ultimately, create.</p>
+
+      <p>The source material also comes out of the home computer boom. The layperson's interest in computing swelled during the eighties. <em>Quick Fox, Lazy Dog</em> is also an homage to that trailblazing era.</p>
+
+      <h3 id="process">Process</h3>
+      <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in <span style="font-family: 'Anonymous Pro'; font-weight: bold;">monotype</span> font within Mark's book. The poems adhere to the following rules:</p>
+      <ul>
+        <li>I recorded strings exactly as is except for ending periods</li>
+        <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
+        <li>Each string is a new line</li>
+        <li>Strings must contain at least two words</li>
+      </ul>
+      <p>These guidelines avoid mixing and matching of individual words to preserve the original tone.</p>
+
+      <h3>Conceptualization</h3>
+
+      <p>Because I'm a big ol' nerd, I recently purchased an <a href="https://en.wikipedia.org/wiki/Apple_Extended_Keyboard">Apple Extended Keyboard II</a>. I started doing typing exercises to become acquainted with it (it's beautiful) which reminded me of this hidden poetry.</p>
+
+      <p>I've also started learning basic front-end web development, including Javascript. I realized Javascript would be the perfect language to write this poetry generator in. The rest is history.</p>
+
+    </section>
+
+    <footer id="footer" class="hidden">
+      <span id="icons">
+        <span id="regularicons">
+          <a href="https://codepen.io/aidantjones/pen/RwPWrmp">
+            <img class="icons" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-112/codepen-logo.svg" alt="Codepen logo">
+          </a>
+          <a href="https://github.com/aidantjones/quick-fox-lazy-dog">
+            <img class="icons" src="https://image.flaticon.com/icons/svg/23/23957.svg" alt="Github logo">
+          </a>
+        </span>
+        <span id="CC" class="icons">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="assets/cc.svg" alt="Creative Commons logo">
+            <img src="assets/by.svg" alt="Creative Commons By logo">
+            <img src="assets/sa.svg" alt="Creative Commons Share Alike Logo">
+          </a>
+        </span>
+      </span>
+      <div id="copyright">
+        <div class="attribution">
+          <p><a href="https://thenounproject.com/term/fox/550657">“Fox” by Felix Brönnimann</a> and <a href="https://thenounproject.com/term/sleeping-dog/2158938">“Sleeping Dog” by Amanda Wray</a>, from the Noun Project.
+          <br>
+          <a href="https://fonts.google.com/specimen/Sorts+Mill+Goudy">Sorts Mill Goudy</a>, <a href="https://fonts.google.com/specimen/Anonymous+Pro">Anonymous Pro</a>, and <a href="https://fonts.adobe.com/fonts/kepler">Kepler Standard</a> fonts used.
+          <br>
+          Background sourced from <a href="https://git-scm.com/">Git's</a> homepage.
+        </p>
+        </div>
+        <p>Made by <a href="https://www.aijo.info">Aidan Jones</a></p>
+        <a href="#top"><img src="assets/dog.svg" alt="Sleeping dog icon"></a>
+      </div>
+    </footer>
+  </body>
+</html>

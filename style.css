@@ -12,12 +12,20 @@ a:visited {
 }
 
 body {
-  background-color: #f1eedc;
+  background: #f0efe7 url(https://git-scm.com/images/bg/body.jpg);
+  background-image: url(https://git-scm.com/images/bg/body.jpg);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(240, 239, 231);
 }
 
 button {
   animation: fadeindelay 2.5s;
-  background-color: #afafaf;
+  background-color: rgb(175, 175, 175, .6);
   border-radius: .25rem;
   color: #414141;
   display: inline-block;
@@ -50,11 +58,11 @@ button:hover {
 
 footer {
   animation: fadeindelay 2.5s;
-  font-family: 'Lora', serif;
+  font-family: 'kepler-std', serif;
   margin: auto;
   padding-top: 1rem;
   text-align: center;
-  width: 50%;
+  width: 35rem;
 }
 
 footer img {
@@ -66,8 +74,8 @@ h1 {
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 4rem;
   font-weight: bold;
-  margin-top: 0rem;
-  margin-bottom: -1.5rem;
+  margin: 0rem auto -1.5rem auto;
+  width: 80%;
   text-transform: uppercase;
 }
 
@@ -76,15 +84,20 @@ header {
   text-align: center;
 }
 
+header button {
+  margin-bottom: 2rem;
+}
+
 header h2 {
   animation: fadeindelay 2s;
   font-family: 'Anonymous Pro', monospace;
   font-size: 1.25rem;
-  margin-bottom: 4rem;
+  width: 40%;
+  margin: 1rem auto 1rem auto;
 }
 
 header img {
-  width: 15%;
+  width: 13rem;
   margin: auto;
   animation: fadein 4s;
 }
@@ -93,7 +106,7 @@ main {
   font-size: 1.1rem;
   font-weight: bold;
   line-height: 1.5rem;
-  margin: 5rem 35% 5rem 31%;
+  margin: 0rem 35% 1.5rem 31%;
   text-align: left;
   width: 35rem;
 }
@@ -118,15 +131,16 @@ main h2 {
 }
 
 #about li {
-  font-family: 'Lora', serif;
+  font-family: 'kepler-std', serif;
 }
 
 #about p {
-  font-family: 'Lora', serif;
+  font-family: 'kepler-std', serif;
   font-size: 1.1rem;
 }
 
 #buttons {
+  margin-top: 2rem;
   margin-bottom: 5rem;
   text-align: center;
 }
@@ -135,7 +149,7 @@ main h2 {
   animation: fadeinfooter .6s forwards;
 }
 
-#copyrighttext {
+#copyright {
   margin-top: -.5rem;
 }
 
@@ -149,6 +163,16 @@ main h2 {
   animation: fadeinfooter .6s forwards;
 }
 
+.divider {
+  margin: auto;
+  width: 15rem;
+  display: block;
+}
+
+.fadein {
+  animation: fadein 3s forwards;
+}
+
 .hidden {
   display: none;
 }
@@ -157,27 +181,46 @@ main h2 {
   opacity: .65;
 }
 
-@media screen and (max-width: 750px) {
+.attribution {
+  font-size: .75rem;
+}
+
+@media screen and (max-width: 950px) {
+  button {
+    margin-bottom: 1rem;
+  }
+
   h1 {
-    line-height: 4.5rem;
+    line-height: 2.5rem;
     margin: auto;
     text-align: center;
     width: 90%;
+    font-size: 2.5rem;
   }
   main {
     margin: 5%;
     width: 90%;
   }
   header h2 {
+    margin-top: .25rem;
     margin-bottom: 1.5rem;
+    width: 50%;
+    font-size: 1rem;
+  }
+  header img {
+    width: 10rem;
   }
   #about {
-    font-family: 'Lora', serif;
+    font-family: 'kepler-std', serif;
     margin: auto;
     width: 75%;
   }
   #buttons {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
+  }
+
+  footer {
+    width: 80%;
   }
 }
 

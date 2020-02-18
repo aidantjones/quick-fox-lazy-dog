@@ -289,7 +289,7 @@ var strings = [
   'new, warm quilts',
   'crazy quilts',
   'early Western life',
-  'They <u>may</u>soon<u>know</u>how<u>good</u>they are',
+  'They <u>may</u> soon <u>know</u> how <u>good</u> they are',
   'We packed our clothes, food, and a tent',
   'cities, tall buildings, and busy offices',
   'she did so very well',

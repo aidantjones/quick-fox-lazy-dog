@@ -7,7 +7,7 @@ If you ever took a typing class, you might remember some of the exercises. Much 
 
 I noticed this weird text and thought I could compile it into strange poetry. The tradition of found poetry and [AI's recent foray into poetic authorship](https://www.wired.co.uk/article/google-artificial-intelligence-poetry) informed the idea for this project.
 
-My goal is to create a simple program that randomly generates poetry from strings gathered from Mark's *Touch Typing Made Simple*, published in 1985.
+I wrote a program that randomly generates poetry from strings gathered from Mark's *Touch Typing Made Simple* as well as Lloyd, Winger, Johnson, Morrison, and Hall's *Gregg Keyboarding and Personal Application*, published in 1985 and 1987, respectively. Any set of strings could be put in their place, however, providing opportunities for future projects.
 
 I intend the results to be humorous at times. But this niche found poetry also comments on the ways in which the computational world informs how we interpret our world through our writing. The strings I pulled from this book were not intended for outside the context of testing one's touch typing. But these exercises were created to allow an emerging demographic to use the home computer. De-contextualizing these exercises brings attention to this continuing massive social change.
 
@@ -15,65 +15,78 @@ The source material also comes out of the home computer boom. The eighties saw t
 
 ## Process
 
-If one were to make poetry out of *any* word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within Mark's book. The poems adhere to the following rules:
+If one were to make poetry out of *any* word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within the typing books. The poems adhere to the following rules:
 
-  - I recorded strings exactly as is except for ending periods
+  - I recorded strings exactly as written except for ending periods
   - I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets
   - Each string is a new line
   - Strings must contain at least two words
 
 These guidelines avoid mixing and matching of individual words to preserve the original tone.
 
+### Stanza Rules
+Minimum of 3 lines, max of 11
+
+### Poem Rules
+Max 12 lines
+
 ## Sample Poems
-*Though I haven't written the code yet, I generated these poems using the actual strings and the algorithm's logic*
 
-### any leffers
+### an elaborate meal
 
-fight the fire   
-The clock struck twelve  
-"The Father of Our Country"  
-going out of business  
-the complimentary close  
-NEW YORK UNIVERSITY  
-the master painter  
-a woman of exceptional intellect and character  
+the bright hues take form
+her Ph.D. from Oregon State
+fight the fire
+now in reno
+inadequate for our purposes
 
-no injuries  
-The spring semester seems to pass much faster  
-the houses on both sides  
-this is not absolute  
+Rick loves that fame
+Sessions for Teenagers
 
-New York to Europe  
-Flight \#1 (Around the World)  
-less than a year  
-SOPHISTICATED LADY  
-Does she realize what her FINE JEWELRY is worth  
-first-class tickets for the place to Houston  
-ADULT EDUCATION  
-RESTIGOUCHE RIVER  
-a voracious reader  
-Sessions for Teenagers  
+Does she realize what her FINE JEWELRY is worth
+The bird floew way up in the sky to get away from the smoke
+invest some time and effort
+near the park
+The women in a village
+Hotels Inns & Resorts Worldwide
 
-### a most exciting trip to Kenya
+### the skill of proodreading
 
-With the wine  
-You should know of some quiet, lazy, joyful   trips for me  
-no injuries  
-fine wool suits  
-NEW YORK UNIVERSITY  
-require a lighter touch  
-a beginner--with ambition  
-concentratoin is necessary  
+a new friend
+School of Law
+Hotels Inns & Resorts Worldwide
+the name of the dictator
 
-### Save Half the Retail Price
+crazy quilts
+Camp overnight
 
-Let your errors stand  
-THE COMPUTER SHOW THAT EVEN ADULTS CAN UNDERSTAND  
-fish by air  
-Do this arithmetic  
+go for the bus--just in time to miss it
+many jovial men
+go to town for the pen
+the houses on both sides
+The FUN of Camping
+The leaves have lost their brilliant green
 
-17 cases of canned fruit  
-AT THE MACHINE  
+### Shout! Up! No! Down! There! Yes! Here! Oh!
+the date
+TAKE CLASSES IN BIKE SAFETY
+she may take a walk
+Eat at a country inn
+
+"Isn't it fine!"
+the lyrics to a song
+Look at the sky!
+to connect and to divide
+
+a hold on things
+
+I went in
+TAKE CLASSES IN BIKE SAFETY
+
+this is not absolute
+the tax returns
+Annual Homecoming
+the plane to Houston
 
 ## Conceptualization
 
