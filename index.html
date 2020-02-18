@@ -12,8 +12,9 @@
   <script type="text/javascript" src="qfld.js"></script>
 </head>
 
-<body onload="console.log(poemFromSeed())">
+<body>
   <header>
+    <img src="qfld.svg" alt="Quick Fox, Lazy Dog logo">
     <h1>
       Quick Fox, Lazy Dog
     </h1>
@@ -26,16 +27,17 @@
   </header>
   <main id="finalpoem"></main>
   <section id="finalseed"></section>
-  <section id="buttons">
+  <section class="hidden" id="buttons">
     <button onclick="copyPoem()"><span id="copypoem">Copy Poem</span></button>
     <button onclick="copySeed()"><span id="copyseed">Share this Poem</span></button>
-  <section id="about">
-    <h2>Philosophy</h2>
-    <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words while some were intelligible but unnatural. This text from Uncanny Valley is an attempt to create a realistic typing
-      scenario while still testing the skills learned in a particular lesson.</p>
+  </section>
+  <section class="hidden" id="about">
 
-    <p>I noticed this weird text and thought I could compile it into strange poetry. The tradition of found poetry and <a href="https://www.wired.co.uk/article/google-artificial-intelligence-poetry">AI's recent foray into poetic authorship</a>
-      informed the idea for this project.</p>
+    <h3>Philosophy</h3>
+
+    <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words while some were intelligible but unnatural. This text from Uncanny Valley is an attempt to create a realistic typing scenario while still testing the skills learned in a particular lesson.</p>
+
+    <p>I noticed this weird text and thought I could compile it into strange poetry. The tradition of found poetry and <a href="https://www.wired.co.uk/article/google-artificial-intelligence-poetry">AI's recent foray into poetic authorship</a> informed the idea for this project.</p>
 
     <p>My goal is to create a simple program that randomly generates poetry from strings gathered from Mark's <em>Touch Typing Made Simple</em>, published in 1985.</p>
 
@@ -43,6 +45,7 @@
 
     <p>The source material also comes out of the home computer boom. The eighties saw the rise of the layperson's interest in computing and, consequentially, typing. Thus, this project is also an homage to that trailblazing era of computing.</p>
 
+    <h3 id="process">Process</h3>
     <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within Mark's book. The poems adhere to the following rules:</p>
     <ul>
       <li>I recorded strings exactly as is except for ending periods</li>
@@ -52,23 +55,13 @@
     </ul>
     <p>These guidelines avoid mixing and matching of individual words to preserve the original tone.</p>
 
-    <h2 id="process">Process</h2>
-    <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within Mark's book. The poems adhere to the following rules:</p>
-    <ul>
-      <li>I recorded strings exactly as is except for ending periods</li>
-      <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
-      <li>Each string is a new line</li>
-      <li>Strings must contain at least two words</li>
-    </ul>
-    <p>These guidelines avoid mixing and matching of individual words to preserve the original tone.</p>
-    <h2>Conceptualization</h2>
+    <h3>Conceptualization</h3>
+
     <p>Because I'm a big ol' nerd, I recently purchased an <a href="https://en.wikipedia.org/wiki/Apple_Extended_Keyboard">Apple Extended Keyboard II</a>. I started doing typing exercises to become acquainted with it (it's beautiful) which reminded of this hidden poetry.</p>
     <p>I've also started to learn basic front-end web development languages, including Javascript. It occurred to me that Javascript would be the perfect language to write this poetry generator in. The rest is history.</p>
 
-    <h2>an elaborate meal</h2><p>flying to Florida in July made Sally decide to fly</p><p>The vast number of people like to buy big bargains<br>You must leave immediately!</p><p>to connect and to divide<br>Hotels Inns & Resorts Worldwide<br>Finish every line you start<br>Now is the time for all good men</p><p>do you understand it<br>You will soon respond to the bell automatically<br>a voracious reader<br>make the exchange<br>the doctor's chart</p>
-
   </section>
-<footer>
+<footer id="footer" class="hidden">
   <span id="icons">
     <span id="regularicons">
       <a href="https://codepen.io/aidantjones/pen/RwPWrmp">

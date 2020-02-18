@@ -179,8 +179,184 @@ var strings = [
   'THE CITY OF NEW YORK',
   'Where? Why? How?',
   'Spring forward!',
-  'Fall back!'
+  'Fall back!',
+  'a competent office worker',
+  'parliamentary procedure',
+  'she sells jade flakes',
+  'he sells old oak',
+  'he has a salad',
+  'The man and the dog did go to the lake',
+  'The duck, the fox, and the fish make problems for the girl',
+  'They may wish to blame me',
+  'the fight to end the problem',
+  'go to town for the pen',
+  'the eighth of May',
+  'load down rock jams',
+  'Park my gray, bronze jet and quickly wax it for five hours',
+  'helping Mr. Van',
+  'The disc jockey',
+  'pink gems and my quartz jewerly',
+  'It is not the right time for us to talk about all the work',
+  'cold, clear, and good to drink',
+  'The light is dim',
+  'it will give us all the light I need',
+  'The bird floew way up in the sky to get away from the smoke',
+  'See Ann at the doctor',
+  'She has the food',
+  'Dr. S. Romer called',
+  'Rick loves that fame',
+  'hear it hum',
+  'Drive with a flair',
+  'the clever quip of the journalist',
+  'we will discuss her tax problems',
+  'I\'m going to mow the lawn',
+  'my sister can edge the lawn',
+  'Summer is the zenith',
+  'winter is quiet',
+  'spanish leather goods',
+  'now in reno',
+  'science and art',
+  'I can print it so fast',
+  'The skirt is plaid',
+  'her Ph.D. from Oregon State',
+  'The U.S.A. and the U.S.S.R.',
+  'so helpful',
+  'Do you want to go to the movies?',
+  'a Japanese import firm',
+  'inadequate for our purposes',
+  'the western part of Kalamazoo',
+  'a former colonel in the Marines',
+  'Zach, move that ax back into that cave',
+  'I wanted to go to the shore today',
+  'much too chilly',
+  'Autumn in the "northlands" is very exciting',
+  'in the early morning',
+  'under a clear, azure blue',
+  'the strong chill in the air',
+  'The leaves have lost their brilliant green',
+  'they have been tinted by someone passing by',
+  'The truth is',
+  'during the night hours',
+  'a frost has painted the green to hues of brown',
+  'yellow, red, and orange',
+  'a breathtaking panorama in technicolor',
+  'you\'ll not soon forget beauty such as this',
+  'view the sights as you move along',
+  'the man\'s woven zipper bag',
+  'To watch teh quirrel is a good lesson, some say',
+  'frozen jams with vigor',
+  'she may take a walk',
+  'many jovial men',
+  'Al Juarez <u>does not</u> believe',
+  'if you could just do as you wanted',
+  'a dotted Swiss dress',
+  'as old as cities or towns',
+  'to the bluff beyond',
+  'the zeal to take the extra list',
+  'We cannot let him squander his time',
+  'There is no equal to the flavor of ice cream',
+  'hot, humid days',
+  'a big smile',
+  'a new friend',
+  'those who join him there',
+  'quiet jet streams of sunlight',
+  'new and vital source of energy',
+  'the lake was a huge sheet of silver',
+  'When it began to rain',
+  'it was BLUE-GREEN, not GRAY',
+  'The clown from Quebec',
+  'paint is a joy',
+  'The zeal with which they work',
+  'the bright hues take form',
+  'smiles to our faces',
+  'type, type, type',
+  'six azure kites',
+  'very huge maples',
+  'a GREAT DEAL of MONEY',
+  'Please let me know, Dr. Chen',
+  'Six bright families',
+  'a place to make a home',
+  'The big tree has something to share with us all',
+  'The goal of the rich girls',
+  'greedy folks',
+  'Getting up in the morning is quite a job',
+  'go for the bus--just in time to miss it',
+  'Next time I will not doze so long',
+  'I can still make it',
+  'the island with the oaks',
+  'do not make any sound',
+  'The women in a village',
+  'new, warm quilts',
+  'crazy quilts',
+  'early Western life',
+  'They <u>may</u>soon<u>know</u>how<u>good</u>they are',
+  'We packed our clothes, food, and a tent',
+  'cities, tall buildings, and busy offices',
+  'she did so very well',
+  'it got very windy',
+  'Will my friends want to help?',
+  'It <u>is</u> not <u>up</u> to <u>us</u>',
+  'It is <u>not</u>',
+  '<u>very, very well written</u>',
+  'zestful lives',
+  'Rush him eight bushels of corn',
+  'We\'re so happy. Aren\'t you pleased?',
+  'Look at the sky!',
+  'You can see it from here! Wow!',
+  'Japan and Turkey',
+  'I did as he "offered"',
+  'I went in',
+  'I seemd "excited"',
+  'he listened',
+  '"What\'s your news?"',
+  'Did he already "know"?',
+  'Is it that we don\'t "care" and "feel"',
+  'a joy to finish',
+  'a hold on things',
+  'those lucky persons',
+  'Watch the beautiful eagle!',
+  'Shout! Up! No! Down! There! Yes! Here! Oh!',
+  '"Isn\'t it fine!"',
+  'he won\'t speak',
+  'he can\'t',
+  '"It\'s <u>Oklahoma!</u>"',
+  'a game of hues',
+  'we prefer to go skiing',
+  'from West Virgina to the West Coast',
+  'special thoughts that you have for your friend',
+  'does 2 + 2 = 4? Of course!',
+  'the wind hits the leaves',
+  'The new moon went over the hills and out of sight too soon',
+  'for the lake and the land',
+  'Look! What a fantastic sight!',
+  'as wide as you wish',
+  '<u>You</u> were the winner!"',
+  'Go to a state park',
+  'Eat at a country inn',
+  'Camp overnight',
+  'Go to Lake Aurora',
+  'TAKE CLASSES IN BIKE SAFETY',
+  'A HISTORY OF PARACHUTING',
+  '<u>A History of Flying</u>',
+  'driving a bus for a park zoo',
+  'rapids that are fearsome to hear',
+  'rocky, thorny, and hot in summer',
+  'spray and sand hit you in the face',
+  'a brisk and stinging jolt',
+  'Join a Club',
+  'Take Up a Sport',
+  'the leaves start to fall in September',
+  'fresh jam was quite lively',
+  'Strong legs, quick reflexes',
+  'skill--not size--is required',
+  'from the Orient',
+  'It is his fault',
+  'Why must I leave?',
+  'why not?',
+  'Six crows in the blue sky'
 ];
+
+/*jshint esversion: 6 */
 
 function poemGenerator() {
 
@@ -196,8 +372,7 @@ function poemGenerator() {
       stanzaAmount = 0,
       loopCounter = 0,
       arrayPoem = ["<h2>"],
-      seedPoem = ["h"],
-      stringNumber;
+      seedPoem = ["h"];
 
   function stringNumberGenerator() // Pulls random string
     {
@@ -235,8 +410,8 @@ function poemGenerator() {
 
 // GENERATE POEM
 function displayAndFade() {
-  var displayPoem = document.getElementById('finalpoem')
-  var displaySeed = document.getElementById('finalseed')
+  var displayPoem = document.getElementById('finalpoem');
+  var displaySeed = document.getElementById('finalseed');
   var poemArray = poemGenerator();
   var displayPoemString = poemArray[0];
   var displaySeedString = 'file:///Users/aidan/github/quick-fox-lazy-dog/index.html?'.concat(poemArray[1].toString().replace(/,/g, ''));
@@ -245,6 +420,12 @@ function displayAndFade() {
   displayPoem.classList.add('fadein');
   console.log(displayPoemString);
   console.log(displaySeedString);
+  var toHide = document.getElementById('buttons');
+  toHide.classList.remove("hidden");
+  toHide = document.getElementById('about');
+  toHide.classList.remove("hidden");
+  toHide = document.getElementById('footer');
+  toHide.classList.remove("hidden");
 }
 
 // COPY POEM
@@ -289,7 +470,6 @@ function copySeed() {
 function poemFromSeed() {
     var parts = window.location.href.replace(/.*\?/, "");
     var newSeed = parts.split(/(\d+)/);
-    var reg = /(\d+)/;
     var loopAmount = 0;
     while (loopAmount < newSeed.length) {
       var originalIndex = newSeed.findIndex(value => /^\d+$/.test(value)); // Finds index value of next available number in original array
