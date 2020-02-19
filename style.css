@@ -153,10 +153,14 @@ main h2 {
   margin-top: -.5rem;
 }
 
+#dog img:hover {
+  animation: fadeinfooter .6s forwards;
+}
+
 #finalseed {
-   left: -9999px;
+  left: -9999px;
   position: absolute;
-   top: -9999px;
+  top: -9999px;
 }
 
 #regularicons img:hover {
