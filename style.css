@@ -1,4 +1,6 @@
-
+html {
+  scroll-behavior: smooth;
+}
 a {
   color: #404040;
 }
@@ -25,7 +27,8 @@ body {
 
 button {
   animation: fadeindelay 2.5s;
-  background-color: rgb(175, 175, 175, .6);
+  background-color: transparent;
+  border: .075rem solid black;
   border-radius: .25rem;
   color: #414141;
   display: inline-block;
@@ -117,6 +120,10 @@ main h2 {
   line-height: 2.5rem;
 }
 
+ul {
+  text-align: left;
+}
+
 #about {
   margin: auto;
   text-align: justify;
@@ -163,8 +170,16 @@ main h2 {
   top: -9999px;
 }
 
+#math {
+  text-align: center;
+}
+
 #regularicons img:hover {
   animation: fadeinfooter .6s forwards;
+}
+
+#icons a {
+  text-decoration: none;
 }
 
 .divider {

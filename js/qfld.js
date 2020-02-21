@@ -3,6 +3,8 @@
 
 /*jshint esversion: 6 */
 
+var length = strings.length
+
 function poemGenerator() {
 
   function randomizer(min, max)   {                                  // Generates random number
@@ -19,7 +21,7 @@ function poemGenerator() {
       seedPoem = ["h"];
 
   function stringNumberGenerator() {                                // Pulls random string
-    return randomizer(1, strings.length);
+    return randomizer(1, length);
   }
 
   var stringNumber = stringNumberGenerator();
@@ -71,6 +73,8 @@ function displayAndFade() {
   displayPoem.innerHTML = displayPoemString;                        // Fills main with poem string
   displaySeed.innerText = displaySeedString;                        // Fills dummy field with string for later copying
   displayButtons()
+  document.getElementById('stringnumber').innerHTML = length.toString();
+  document.getElementById('permutation').innerHTML = permutation(length).toPrecision(3).replace("e+", " × 10<sup>" ).concat("<sup>");
 }
 
 // COPY
@@ -121,6 +125,20 @@ function poemFromSeed() {
 
   displayButtons();
 }
+
+
+// PERMUTATION CALCULATOR
+var total = 0;
+var exponent = 76;                                                      // Max amount of possible lines
+
+function permutation(num) {
+  while (exponent > 0) {
+    total += num ** exponent;
+  exponent--;                                                           // Accounts for every amount of possible lines
+  }
+  return total;
+}
+
 
 function urlChecker(){
   if (window.location.href.indexOf("?") != -1) {
