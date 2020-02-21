@@ -1,6 +1,8 @@
 # Quick Fox, Lazy Dog
 *Auto-generated poetry from vintage typing exercises*
 
+## [Generate your own](https://www.aijo.info/qfld)
+
 ## Philosophy
 
 If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words; some were intelligible but unnatural. This latter text from Uncanny Valley attempts to create a realistic typing scenario while still testing the skills learned in a particular lesson.
@@ -46,58 +48,58 @@ These guidelines avoid mixing individual words to preserve the original tone.
 
 ### an elaborate meal
 
-the bright hues take form
-her Ph.D. from Oregon State
-fight the fire
-now in reno
+the bright hues take form  
+her Ph.D. from Oregon State  
+fight the fire  
+now in reno  
 inadequate for our purposes
 
-Rick loves that fame
+Rick loves that fame  
 Sessions for Teenagers
 
-Does she realize what her FINE JEWELRY is worth
-The bird floew way up in the sky to get away from the smoke
-invest some time and effort
-near the park
-The women in a village
+Does she realize what her FINE JEWELRY is worth  
+The bird floew way up in the sky to get away from the smoke  
+invest some time and effort  
+near the park  
+The women in a village  
 Hotels Inns & Resorts Worldwide
 
 ### the skill of proodreading
 
-a new friend
-School of Law
-Hotels Inns & Resorts Worldwide
+a new friend  
+School of Law  
+Hotels Inns & Resorts Worldwide  
 the name of the dictator
 
-crazy quilts
+crazy quilts  
 Camp overnight
 
-go for the bus--just in time to miss it
-many jovial men
-go to town for the pen
-the houses on both sides
-The FUN of Camping
+go for the bus--just in time to miss it  
+many jovial men  
+go to town for the pen  
+the houses on both sides  
+The FUN of Camping  
 The leaves have lost their brilliant green
 
 ### Shout! Up! No! Down! There! Yes! Here! Oh!
-the date
-TAKE CLASSES IN BIKE SAFETY
-she may take a walk
+the date  
+TAKE CLASSES IN BIKE SAFETY  
+she may take a walk  
 Eat at a country inn
 
-"Isn't it fine!"
-the lyrics to a song
-Look at the sky!
+"Isn't it fine!"  
+the lyrics to a song  
+Look at the sky!  
 to connect and to divide
 
 a hold on things
 
-I went in
+I went in  
 TAKE CLASSES IN BIKE SAFETY
 
-this is not absolute
-the tax returns
-Annual Homecoming
+this is not absolute  
+the tax returns  
+Annual Homecoming  
 the plane to Houston
 
 ## Conceptualization
