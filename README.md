@@ -3,32 +3,44 @@
 
 ## Philosophy
 
-If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words while some were intelligible but unnatural. This text from Uncanny Valley is an attempt to create a realistic typing scenario while still testing the skills learned in a particular lesson.
+If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words; some were intelligible but unnatural. This latter text from Uncanny Valley attempts to create a realistic typing scenario while still testing the skills learned in a particular lesson.
 
-I noticed this weird text and thought I could compile it into strange poetry. The tradition of found poetry and [AI's recent foray into poetic authorship](https://www.wired.co.uk/article/google-artificial-intelligence-poetry) informed the idea for this project.
+I noticed this offputting text and thought it would render endearing poetry. The tradition of found poetry and [AI's recent foray into poetic authorship](https://www.wired.co.uk/article/google-artificial-intelligence-poetry) inspired this project.
 
-I wrote a program that randomly generates poetry from strings gathered from Mark's *Touch Typing Made Simple* as well as Lloyd, Winger, Johnson, Morrison, and Hall's *Gregg Keyboarding and Personal Application*, published in 1985 and 1987, respectively. Any set of strings could be put in their place, however, providing opportunities for future projects.
+I wrote a program that randomly generates poetry from strings gathered from:
 
-I intend the results to be humorous at times. But this niche found poetry also comments on the ways in which the computational world informs how we interpret our world through our writing. The strings I pulled from this book were not intended for outside the context of testing one's touch typing. But these exercises were created to allow an emerging demographic to use the home computer. De-contextualizing these exercises brings attention to this continuing massive social change.
+ - *[Gregg Keyboarding and Personal Application](https://archive.org/details/greggkeyboarding0000unse)* (Lloyd et al 1987)
+ - *[Mastering Computer Typing: A Painless Course for Beginners and Professionals](https://archive.org/details/masteringcompute00lind)* (Lindsell-Roberts 1995)
+ - *[Touch Typing Made Simple](https://archive.org/details/touchtypingmades00mark/page/n8)* (Mark 1985)
+ - *[Typing: A Step-by-Step Guide to Keyboard Mastery](https://archive.org/details/typingastepbyste00bett)* (Croft 1994)
+ - *[Typing Made Easy](https://archive.org/details/typingmadeeasyin00dian)* (Bellavance 1997)
 
-The source material also comes out of the home computer boom. The eighties saw the rise of the layperson's interest in computing and, consequentially, typing. Thus, this project is also an homage to that trailblazing era of computing.
+Any set of strings could be used, however, providing opportunities to create infinitely diverse poetry.
+
+The results are humorous but also thought-provoking. Typing exercises are not intended for use outside of touch typing practice. De-contextualizing them highlights how technology can change what we type and, ultimately, create, including this project.
+
+The source material also comes out of the home computer boom. The layperson's interest in computing swelled during the eighties and nineties. *Quick Fox, Lazy Dog* honors that trailblazing era.
+
+## Numbers
+
+From the 555 strings, there are 3.69 × 10<sup>208</sup> poems possible, [much, much more than there are particles in the observable universe](https://www.popularmechanics.com/space/a27259/how-many-particles-are-]in-the-entire-universe/). It's also greater than a googol squared. Guess we'll be here a while!
+
+I used [the following](https://www.wolframalpha.com/input/?i=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%E2%88%91%3C%2Fmo%3E%3Cmrow%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%3D%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmrow%3E%3Cmn%3E72%3C%2Fmn%3E%3C%2Fmunderover%3E%3Cmsup%3E%3Cmi%3En%3C%2Fmi%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmsup%3E%3C%2Fmath%3E) to calculate this figure:
+
+![\sum_{x=1}^{72}n^x](https://render.githubusercontent.com/render/math?math=%5Csum_%7Bx%3D1%7D%5E%7B72%7Dn%5Ex)
+
+where *n* equals the string amount. It sums the permutations formula with replacement. Poems with the line amounts from 1 to 72 are possible. The permutations of strings for each possible line amount comprises the total number of possibilities.
 
 ## Process
 
-If one were to make poetry out of *any* word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within the typing books. The poems adhere to the following rules:
+If one were to make poetry out of *any* word in a typing book, it wouldn't be a restriction. I sourced strings from the exercise sentences in monospace font (setting most exercises in monospace font became a de facto standard in typing books). The algorithm shapes the poems governed by the following parameters:
 
   - I recorded strings exactly as written except for ending periods
   - I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets
   - Each string is a new line
   - Strings must contain at least two words
 
-These guidelines avoid mixing and matching of individual words to preserve the original tone.
-
-### Stanza Rules
-Minimum of 3 lines, max of 11
-
-### Poem Rules
-Max 12 lines
+These guidelines avoid mixing individual words to preserve the original tone.
 
 ## Sample Poems
 
