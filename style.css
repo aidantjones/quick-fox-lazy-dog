@@ -101,7 +101,6 @@ h1 {
 
 header {
   margin-top: 2rem;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -113,8 +112,8 @@ header h2 {
   animation: fadeindelay 2s;
   font-family: 'Anonymous Pro', monospace;
   font-size: 1.25rem;
-  width: 40%;
-  margin: 1rem auto 1rem auto;
+  width: 50%;
+  margin: .5rem auto 1rem auto;
 }
 
 header img {
@@ -180,8 +179,8 @@ ul {
 }
 
 #buttons {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -297,15 +296,26 @@ ul {
   }
 
   #headervideo {
-    width: 50%;
+    width: 30rem;
   }
 
   footer {
     width: 80%;
   }
 
+  #about.videowrapper {
+    padding-bottom: 56.25%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #headervideo {
+    width: 80%;
+  }
+
   .videowrapper {
-    padding-bottom: 28%;
+    width: 60%;
+    padding-bottom: 38%;
   }
 }
 
