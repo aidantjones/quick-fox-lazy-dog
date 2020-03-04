@@ -1,6 +1,6 @@
-/*jshint esversion: 6 */
+/*jshint esversion: 7 */
 
-var length = strings.length
+var length = strings.length;
 
 function poemGenerator() {
 
@@ -58,6 +58,7 @@ function reveal() {
 // GENERATE POEM BUTTON
 function displayAndFade() {
   var poemArray = poemGenerator();
+  $('#headervideo').addClass('hidden');
   $("#finalpoem").html(poemArray[0]);                               // Fills main with poem string
   $("#finalseed").html(window.location.href.concat("?", poemArray[1].toString().replace(/,/g, ''))); // Fills dummy field with string for later copying
   reveal();
@@ -67,6 +68,7 @@ function displayAndFade() {
 
 // GENERATE POEM FROM SEED
 function poemFromSeed() {
+  $('#headervideo').addClass('hidden');
   var originalSeed = window.location.href.replace(/.*\?/, "");      // Grabs seed from end of address bar
   var newSeed = originalSeed.split(/(\d+)/);                        // Splits string into numbers and charcters then returns an array
   var loopAmount = 0;
@@ -105,7 +107,7 @@ function copy(copyText, buttonID, alert) {
   selection.removeAllRanges();                                       // Creates dummy range, fills it with text, copies it, and removes the selection
   $("#" + buttonID).text(alert);                                     // Sets button to alert text
   setTimeout(function() {                                            // Reverts after 2 seconds
-    $("#" + buttonID).html(buttonText)
+    $("#" + buttonID).html(buttonText);
   }, 2000);
 }
 
@@ -123,14 +125,14 @@ function permutation(num) {
 
 $(document).ready(function() {
   if (window.location.href.indexOf("?") != -1) {
-    poemFromSeed()
-    console.log("Seed detected")
+    poemFromSeed();
+    console.log("Seed detected");
   }
   else {
     console.log("No seed detected");
   }
   $("#generatepoem").click(function() {
-    (displayAndFade())
+    (displayAndFade());
   });
   $("#copypoembutton").click(function() {
     copy('finalpoem', 'copypoem', 'Poem copied!');
