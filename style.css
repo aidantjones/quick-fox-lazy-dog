@@ -31,6 +31,7 @@ button {
   border: .075rem solid black;
   border-radius: .25rem;
   color: #414141;
+  cursor: pointer;
   display: inline-block;
   font-family: 'Sorts Mill Goudy', serif;
   font-size: 1.2rem;

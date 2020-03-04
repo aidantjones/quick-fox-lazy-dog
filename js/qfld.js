@@ -1,6 +1,3 @@
-
-// To view well-formatted comments, view fullscreen without soft-wrapping
-
 /*jshint esversion: 6 */
 
 var length = strings.length
@@ -49,59 +46,33 @@ function poemGenerator() {
   return poemArray;
 }
 
-function displayButtons(){
-  document.getElementById('finalpoem').classList.add('fadein');
-  document.getElementById('buttons').classList.remove("hidden");
-  document.getElementById('about').classList.remove("hidden");
-  document.getElementById('footer').classList.remove("hidden");
-  var divider = document.getElementsByClassName('divider');
-  function dividerRemover() {
-    for (var loopNumber = 0; loopNumber < divider.length; loopNumber++) {
-      divider[loopNumber].classList.remove('hidden');
-    }
-  }
-  dividerRemover();
+//UNHIDES CONTENT
+function reveal() {
+  $("#finalpoem").addClass("fadein");
+  $("#buttons").removeClass("hidden");
+  $("#about").removeClass("hidden");
+  $("footer").removeClass("hidden");
+  $(".divider").removeClass("hidden");
 }
 
 // GENERATE POEM BUTTON
 function displayAndFade() {
-  var displayPoem = document.getElementById('finalpoem');
-  var displaySeed = document.getElementById('finalseed');
   var poemArray = poemGenerator();
-  var displayPoemString = poemArray[0];                             // Pulls poem string from the master array
-  var displaySeedString = window.location.href.concat("?", poemArray[1].toString().replace(/,/g, '')); // Converts seed array to a string and concatonates it to the current URL that can be shared
-  displayPoem.innerHTML = displayPoemString;                        // Fills main with poem string
-  displaySeed.innerText = displaySeedString;                        // Fills dummy field with string for later copying
-  displayButtons()
-  document.getElementById('stringnumber').innerHTML = length.toString();
-  document.getElementById('permutation').innerHTML = permutation(length).toPrecision(3).replace("e+", " × 10<sup>" ).concat("<sup>");
-}
-
-// COPY
-function copy(buttonID, buttonText, buttonCopyText, finalTextID) {
-  function buttonReset() {
-    // buttonField = ""\"buttonText\""
-    var copyButton = document.getElementById(buttonID);
-    copyButton.innerHTML = buttonText;
-  }
-  var selection = window.getSelection();
-  var range = document.createRange();
-  range.selectNodeContents(document.getElementById(finalTextID));
-  selection.addRange(range);
-  document.execCommand("copy");
-  selection.removeAllRanges();
-  document.getElementById(buttonID).innerHTML = buttonCopyText;
-  setTimeout(buttonReset, 2000);
+  $("#finalpoem").html(poemArray[0]);                               // Fills main with poem string
+  $("#finalseed").html(window.location.href.concat("?", poemArray[1].toString().replace(/,/g, ''))); // Fills dummy field with string for later copying
+  reveal();
+  $("#stringnumber").text(length);                                  // Puts amount of strings into paragraph
+  $("#permutation").html(permutation(length).toPrecision(3).replace("e+", " × 10<sup>" ).concat("<sup>")); // Puts amount of poem permutations into paragraph
 }
 
 // GENERATE POEM FROM SEED
 function poemFromSeed() {
-  var originalSeed = window.location.href.replace(/.*\?/, "");
-  var newSeed = originalSeed.split(/(\d+)/);
+  var originalSeed = window.location.href.replace(/.*\?/, "");      // Grabs seed from end of address bar
+  var newSeed = originalSeed.split(/(\d+)/);                        // Splits string into numbers and charcters then returns an array
   var loopAmount = 0;
   while (loopAmount < newSeed.length) {
-    var originalIndex = newSeed.findIndex(value => /^\d+$/.test(value)); // Finds index value of next available number in original array
-    var newSeedIndex = newSeed[originalIndex];                           // Gets value in original array using the previous originalIndex
+    var originalIndex = newSeed.findIndex(value => /^\d+$/.test(value));   // Finds index value of next available number in original array
+    var newSeedIndex = newSeed[originalIndex];                             // Gets value in original array using the previous originalIndex
     newSeed[originalIndex] = strings[newSeedIndex];
 
     var originalBPEIndex = newSeed.findIndex(value => /^bp$/.test(value)); // Replaces seed paragraph code with HTML tags
@@ -111,36 +82,46 @@ function poemFromSeed() {
 
     loopAmount++;
   }
-  var hIndex = newSeed.findIndex(value => /^h$/.test(value));           // Replaces seed opening h2 code with HTML tag
+  var hIndex = newSeed.findIndex(value => /^h$/.test(value));        // Replaces seed opening h2 code with HTML tag
   newSeed[hIndex] = "<h2>";
-  var heIndex = newSeed.findIndex(value => /^he$/.test(value));         // Replaces seed closing h2 code with HTML tag
+  var heIndex = newSeed.findIndex(value => /^he$/.test(value));      // Replaces seed closing h2 code with HTML tag
   newSeed[heIndex] = "</h2><p>";
 
-  newSeed.length = (newSeed.length - 1);                                // Removes unnecessary value from end of array
+  newSeed.length = (newSeed.length - 1);                             // Removes unnecessary value from end of array
   newSeed.push("</p>");
+  $("#finalpoem").html(newSeed.toString().replace(/,/g, ''));
 
-  var finalPoem = newSeed.toString().replace(/,/g, '');                 // Converts array to string and removes commas
-
-  document.getElementById("finalpoem").innerHTML = finalPoem;
-
-  displayButtons();
+  reveal();
 }
 
+// COPY
+function copy(copyText, buttonID, alert) {
+  var buttonText = $("#" + buttonID).text();                         // Gets text of current button to restore later after alert expires
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(document.getElementById(copyText));
+  selection.addRange(range);
+  document.execCommand("copy");
+  selection.removeAllRanges();                                       // Creates dummy range, fills it with text, copies it, and removes the selection
+  $("#" + buttonID).text(alert);                                     // Sets button to alert text
+  setTimeout(function() {                                            // Reverts after 2 seconds
+    $("#" + buttonID).html(buttonText)
+  }, 2000);
+}
 
 // PERMUTATION CALCULATOR
 var total = 0;
-var exponent = 76;                                                      // Max amount of possible lines
+var exponent = 76;                                                   // Max amount of possible lines
 
 function permutation(num) {
   while (exponent > 0) {
     total += num ** exponent;
-  exponent--;                                                           // Accounts for every amount of possible lines
+  exponent--;                                                        // Accounts for every amount of possible lines
   }
   return total;
 }
 
-
-function urlChecker(){
+$(document).ready(function() {
   if (window.location.href.indexOf("?") != -1) {
     poemFromSeed()
     console.log("Seed detected")
@@ -148,4 +129,13 @@ function urlChecker(){
   else {
     console.log("No seed detected");
   }
-}
+  $("#generatepoem").click(function() {
+    (displayAndFade())
+  });
+  $("#copypoembutton").click(function() {
+    copy('finalpoem', 'copypoem', 'Poem copied!');
+  });
+  $("#copyseedbutton").click(function() {
+    copy("finalseed", "copyseed", "Poem link copied!");
+  });
+});

@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/strings.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script type="text/javascript" src="js/qfld.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
-  <body onload="urlChecker()">
+  <body>
     <a name="top"></a>
     <header>
       <img src="assets/qfld.svg" alt="Quick Fox, Lazy Dog logo">
@@ -25,7 +26,7 @@
       <h2 class="fadeindelay">
         A poetry project by Aidan Jones
       </h2>
-      <button onclick="displayAndFade()">
+      <button id="generatepoem">
         Generate Poem
       </button>
     </header>
@@ -38,8 +39,8 @@
 
     <section id="finalseed"></section>
     <section class="hidden" id="buttons">
-      <button onclick="copy('copypoem', 'Copy Poem', 'Copied!', 'finalpoem')"><span id="copypoem">Copy Poem</span></button>
-      <button onclick="copy('copyseed', 'Share this Poem', 'Link Copied!', 'finalseed')"><span id="copyseed">Share this Poem</span></button>
+      <button id="copypoembutton"><span id="copypoem">Copy Poem</span></button>
+      <button id="copyseedbutton"><span id="copyseed">Share this Poem</span></button>
     </section>
 
     <section class="hidden" id="about">
