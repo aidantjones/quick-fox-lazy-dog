@@ -59,6 +59,22 @@ button:hover {
   color: white;
 }
 
+figure {
+  margin: auto;
+  width: 100%;
+}
+
+figure img {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+figcaption {
+  font-size: .85rem;
+  font-family: 'kepler-std', serif;
+}
+
 footer {
   animation: fadeindelay 2.5s;
   font-family: 'kepler-std', serif;
@@ -104,6 +120,15 @@ header img {
   margin: auto;
   animation: fadein 4s;
 }
+
+header iframe {
+  display: block;
+  text-align: center;
+  margin: auto;
+  opacity: 0;
+  animation: fadeindelay 3s forwards;
+}
+
 main {
   font-family: 'Anonymous Pro', monospace;
   font-size: 1.1rem;
@@ -137,6 +162,12 @@ ul {
   margin-bottom: 0rem;
 }
 
+#about iframe {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
 #about li {
   font-family: 'kepler-std', serif;
 }
@@ -164,6 +195,10 @@ ul {
   animation: fadeinfooter .6s forwards;
 }
 
+#headervideo {
+  width: 30rem;
+}
+
 #finalseed {
   left: -9999px;
   position: absolute;
@@ -180,6 +215,10 @@ ul {
 
 #icons a {
   text-decoration: none;
+}
+
+.attribution {
+  font-size: .75rem;
 }
 
 .divider {
@@ -200,8 +239,19 @@ ul {
   opacity: .65;
 }
 
-.attribution {
-  font-size: .75rem;
+.videowrapper {
+  margin: auto;
+  position: relative;
+	padding-bottom: 16.9rem;
+	height: 0;
+}
+
+.videowrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (max-width: 950px) {
@@ -229,17 +279,27 @@ ul {
   header img {
     width: 10rem;
   }
+
   #about {
     font-family: 'kepler-std', serif;
     margin: auto;
     width: 75%;
   }
+
   #buttons {
     margin-bottom: 0rem;
   }
 
+  #headervideo {
+    width: 50%;
+  }
+
   footer {
     width: 80%;
+  }
+
+  .videowrapper {
+  	padding-bottom: 28%;
   }
 }
 

@@ -72,6 +72,7 @@ function displayAndFade() {
   var displaySeedString = window.location.href.concat("?", poemArray[1].toString().replace(/,/g, '')); // Converts seed array to a string and concatonates it to the current URL that can be shared
   displayPoem.innerHTML = displayPoemString;                        // Fills main with poem string
   displaySeed.innerText = displaySeedString;                        // Fills dummy field with string for later copying
+  document.getElementById('headervideo').classList.add('hidden');
   displayButtons()
   document.getElementById('stringnumber').innerHTML = length.toString();
   document.getElementById('permutation').innerHTML = permutation(length).toPrecision(3).replace("e+", " × 10<sup>" ).concat("<sup>");
@@ -122,6 +123,8 @@ function poemFromSeed() {
   var finalPoem = newSeed.toString().replace(/,/g, '');                 // Converts array to string and removes commas
 
   document.getElementById("finalpoem").innerHTML = finalPoem;
+
+  document.getElementById("headervideo").classList.add('hidden');
 
   displayButtons();
 }
