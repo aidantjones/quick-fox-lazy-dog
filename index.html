@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/strings.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script type="text/javascript" src="js/qfld.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
-  <body onload="urlChecker()">
+  <body>
     <a name="top"></a>
     <header>
       <img src="assets/qfld.svg" alt="Quick Fox, Lazy Dog logo">
@@ -25,7 +26,7 @@
       <h2 class="fadeindelay">
         A poetry project by Aidan Jones
       </h2>
-      <button onclick="displayAndFade()">
+      <button id="generatepoem">
         Generate Poem
       </button>
       <div id="headervideo" class="videowrapper">
@@ -41,8 +42,8 @@
 
     <section id="finalseed"></section>
     <section class="hidden" id="buttons">
-      <button onclick="copy('copypoem', 'Copy Poem', 'Copied!', 'finalpoem')"><span id="copypoem">Copy Poem</span></button>
-      <button onclick="copy('copyseed', 'Share this Poem', 'Link Copied!', 'finalseed')"><span id="copyseed">Share this Poem</span></button>
+      <button id="copypoembutton"><span id="copypoem">Copy Poem</span></button>
+      <button id="copyseedbutton"><span id="copyseed">Share this Poem</span></button>
     </section>
 
     <section class="hidden" id="about">
@@ -68,7 +69,7 @@
 
       <p>I wrote a program that randomly generates poetry from strings gathered from:
         <ul>
-          <li><a href="https://archive.org/details/greggkeyboarding0000unse"><em>Gregg Keyboarding and Personal Application</em></a> (Lloyd, Winger, Johnson, Morrison, and Hall 1987)</li>
+          <li><a href="https://archive.org/details/greggkeyboarding0000unse"><em>Gregg Keyboarding and Personal Application</em></a> (Lloyd et al 1987)</li>
           <li><a href="https://archive.org/details/masteringcompute00lind"><em>Mastering Computer Typing: A Painless Course for Beginners and Professionals</em></a> (Lindsell-Roberts 1995)</li>
           <li><a href="https://archive.org/details/touchtypingmades00mark/page/n8"><em>Touch Typing Made Simple</em></a> (Mark 1985)</li>
           <li><a href="https://archive.org/details/typingastepbyste00bett"><em>Typing: A Step-by-Step Guide to Keyboard Mastery</em></a> (Croft 1994)</li>
@@ -84,10 +85,10 @@
 
       <p>The results are humorous but also thought-provoking. Typing exercises are not intended for use outside of touch typing practice. De-contextualizing them highlights how technology can change what we type and, ultimately, create, including this project.</p>
 
-      <p>The source material also comes out of the home computer boom. The layperson's interest in computing swelled during the eighties and nineties. <em>Quick Fox, Lazy Dog</em> is an homage to that trailblazing era.</p>
+      <p>The source material also comes out of the home computer boom. The layperson's interest in computing swelled during the eighties and nineties. <em>Quick Fox, Lazy Dog</em> honors that trailblazing era.</p>
 
       <h3 id="process">Process</h3>
-      <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercise sentences in <span style="font-family: 'Anonymous Pro'; font-weight: bold;">monotype</span> font (setting most exercises in monospace font became a de facto standard in typing books). The algorithm shapes the poems governed by the following parameters:</p>
+      <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be a restriction. I sourced strings from the exercise sentences in <span style="font-family: 'Anonymous Pro'; font-weight: bold;">monospace</span> font (setting most exercises in monospace font became a de facto standard in typing books). The algorithm shapes the poems governed by the following parameters:</p>
       <ul>
         <li>I recorded strings exactly as is except for ending periods</li>
         <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
