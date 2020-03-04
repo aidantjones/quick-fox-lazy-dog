@@ -1,87 +1,139 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Quick Fox, Lazy Dog</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="strings.js"></script>
-  <script type="text/javascript" src="qfld.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Fox, Lazy Dog</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dqk3cno.css">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/strings.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/qfld.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
 
-<body>
-  <header>
-    <h1>
-      Quick Fox, Lazy Dog
-    </h1>
-    <h2 class="fadeindelay">
-      A poetry project by Aidan Jones
-    </h2>
-    <button onclick="displayAndFade()">
-      Generate Poem
-    </button>
-  </header>
-  <main id="finalPoem"></main>
-  <section id="about">
-    <h2>Philosophy</h2>
-    <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words while some were intelligible but unnatural. This text from Uncanny Valley is an attempt to create a realistic typing
-      scenario while still testing the skills learned in a particular lesson.</p>
+  <body>
+    <a name="top"></a>
+    <header>
+      <img src="assets/qfld.svg" alt="Quick Fox, Lazy Dog logo">
+      <h1>
+        Quick Fox, Lazy Dog
+      </h1>
+      <h2 class="fadeindelay">
+        A poetry project by Aidan Jones
+      </h2>
+      <button id="generatepoem">
+        Generate Poem
+      </button>
+      <div id="headervideo" class="videowrapper">
+        <iframe src="https://www.youtube.com/embed/KxaukBbSAp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </header>
 
-    <p>I noticed this weird text and thought I could compile it into strange poetry. The tradition of found poetry and <a href="https://www.wired.co.uk/article/google-artificial-intelligence-poetry">AI's recent foray into poetic authorship</a>
-      informed the idea for this project.</p>
+    <img class="divider hidden" alt="Text divider" src="assets/divider.svg">
 
-    <p>My goal is to create a simple program that randomly generates poetry from strings gathered from Mark's <em>Touch Typing Made Simple</em>, published in 1985.</p>
+    <main id="finalpoem"></main>
 
-    <p>I intend the results to be humorous at times. But this niche found poetry also comments on the ways in which the computational world informs how we interpret our world through our writing. The strings I pulled from this book were not intended for outside the context of testing one's touch typing. But these exercises were created to allow an emerging demographic to use the home computer. De-contextualizing these exercises brings attention to this continuing massive social change.</p>
+    <img id="bottomdivider" class="divider hidden" alt="Text divider" src="assets/divider.svg">
 
-    <p>The source material also comes out of the home computer boom. The eighties saw the rise of the layperson's interest in computing and, consequentially, typing. Thus, this project is also an homage to that trailblazing era of computing.</p>
+    <section id="finalseed"></section>
+    <section class="hidden" id="buttons">
+      <button id="copypoembutton"><span id="copypoem">Copy Poem</span></button>
+      <button id="copyseedbutton"><span id="copyseed">Share this Poem</span></button>
+    </section>
 
-    <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within Mark's book. The poems adhere to the following rules:</p>
-    <ul>
-      <li>I recorded strings exactly as is except for ending periods</li>
-      <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
-      <li>Each string is a new line</li>
-      <li>Strings must contain at least two words</li>
-    </ul>
-    <p>These guidelines avoid mixing and matching of individual words to preserve the original tone.</p>
+    <section class="hidden" id="about">
+      <div id="aboutvideo" class="videowrapper">
+        <iframe src="https://www.youtube.com/embed/KxaukBbSAp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h3>Numbers</h3>
 
-    <h2 id="process">Process</h2>
-    <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be much of a restriction. I sourced strings from the exercises in monotype font within Mark's book. The poems adhere to the following rules:</p>
-    <ul>
-      <li>I recorded strings exactly as is except for ending periods</li>
-      <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
-      <li>Each string is a new line</li>
-      <li>Strings must contain at least two words</li>
-    </ul>
-    <p>These guidelines avoid mixing and matching of individual words to preserve the original tone.</p>
-    <h2>Conceptualization</h2>
-    <p>Because I'm a big ol' nerd, I recently purchased an <a href="https://en.wikipedia.org/wiki/Apple_Extended_Keyboard">Apple Extended Keyboard II</a>. I started doing typing exercises to become acquainted with it (it's beautiful) which reminded of this hidden poetry.</p>
-    <p>I've also started to learn basic front-end web development languages, including Javascript. It occurred to me that Javascript would be the perfect language to write this poetry generator in. The rest is history.</p>
-  </section>
-<footer>
-  <span id="icons">
-    <span id="regularicons">
-      <a href="https://codepen.io/aidantjones/pen/RwPWrmp">
-        <img class="icons" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-112/codepen-logo.svg" alt="Codepen logo">
-      </a>
-      <a href="https://github.com/aidantjones/quick-fox-lazy-dog">
-        <img class="icons" src="https://image.flaticon.com/icons/svg/23/23957.svg" alt="Github logo">
-      </a>
-    </span>
-    <span id="CC" class="icons">
-      <a href="https://creativecommons.org/licenses/by-sa/4.0/">
-        <img src="assets/cc.svg" alt="Creative Commons logo">
-        <img src="assets/by.svg" alt="Creative Commons By logo">
-        <img src="assets/sa.svg" alt="Creative Commons Share Alike Logo">
-      </a>
-    </span>
-  </span>
-  <div id="copyrighttext">
-    <p><a href="https://www.aijo.info">Aidan Jones</a></p>
-  </div>
-</footer>
-</body>
+      <p>From the <span id="stringnumber"></span> strings, there are <b><span id="permutation"></span></b> poems possible, <a href="https://www.popularmechanics.com/space/a27259/how-many-particles-are-]in-the-entire-universe/"> much, much more than there are particles in the observable universe.</a> It's also greater than a googol squared. Guess we'll be here a while!</p>
+
+      <p>I used the following to calculate this figure:</p>
+
+      <p id="math"><math xmlns="http://www.w3.org/1998/Math/MathML"><munderover><mo>&#x2211;</mo><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><mn>72</mn></munderover><msup><mi>n</mi><mi>x</mi></msup></math><p>
+
+      <p>where <em>n</em> equals the string amount. This function sums the permutations formula with replacement. Poems with the line amounts from 1 to 72 are possible. The permutations of strings for each possible line amount comprises the total number of possibilities.</p>
+
+      <h3>Philosophy</h3>
+
+      <p>If you ever took a typing class, you might remember some of the exercises. Much of them were gibberish or random words; some were intelligible but unnatural. This latter text from Uncanny Valley attempts to create a realistic typing scenario while testing the skills learned in a particular lesson.</p>
+
+      <p>I noticed this off-putting text and thought it would render endearing poetry. The tradition of found poetry and <a href="https://www.wired.co.uk/article/google-artificial-intelligence-poetry">AI's recent foray into poetic authorship</a> inspired this project.</p>
+
+      <p>I wrote a program that randomly generates poetry containing strings gathered from:
+        <ul>
+          <li><a href="https://archive.org/details/greggkeyboarding0000unse"><em>Gregg Keyboarding and Personal Application</em></a> (Lloyd et al 1987)</li>
+          <li><a href="https://archive.org/details/masteringcompute00lind"><em>Mastering Computer Typing: A Painless Course for Beginners and Professionals</em></a> (Lindsell-Roberts 1995)</li>
+          <li><a href="https://archive.org/details/touchtypingmades00mark/page/n8"><em>Touch Typing Made Simple</em></a> (Mark 1985)</li>
+          <li><a href="https://archive.org/details/typingastepbyste00bett"><em>Typing: A Step-by-Step Guide to Keyboard Mastery</em></a> (Croft 1994)</li>
+          <li><a href="https://archive.org/details/typingmadeeasyin00dian"><em>Typing Made Easy</em></a> (Bellavance 1997)</li>
+        </ul>
+
+      <figure>
+        <img src="assets/lesson66.png" alt="">
+        <figcaption>Typing exercises from <em>Gregg Keyboarding and Personal Application</em></figcaption>
+      </figure>
+
+      <p>Any set of strings could be input into this program, however, providing opportunities to create infinitely diverse poetry.</p>
+
+      <p>The results are humorous but also thought-provoking. Typing exercises are not intended for use outside of touch typing practice. De-contextualizing them highlights how technology can change what we type and, ultimately, create, including this project.</p>
+
+      <p>The source material also comes out of the home computer boom. The layperson's interest in computing swelled during the eighties and nineties. <em>Quick Fox, Lazy Dog</em> honors that trailblazing era.</p>
+
+      <h3 id="process">Process</h3>
+      <p>If one were to make poetry out of <em>any</em> word in a typing book, it wouldn't be a restriction. I sourced strings from the exercise sentences in <span style="font-family: 'Anonymous Pro'; font-weight: bold;">monospace</span> font (setting most exercises in monospace font became a de facto standard in typing books). The algorithm shapes the poems governed by the following parameters:</p>
+      <ul>
+        <li>I recorded strings exactly as is except for ending periods</li>
+        <li>I took artistic license in editing the beginnings and endings of strings. The program does not put a string in the middle of another, like poetry fridge magnets</li>
+        <li>Each string is a new line</li>
+        <li>Strings must contain at least two words</li>
+      </ul>
+      <p>These guidelines avoid mixing individual words to preserve the original tone.</p>
+
+      <h3>Conceptualization</h3>
+
+      <p>Because I'm a big ol' nerd, I recently purchased an <a href="https://en.wikipedia.org/wiki/Apple_Extended_Keyboard">Apple Extended Keyboard II</a>. I started doing typing exercises to become acquainted with it (it's beautiful) which reminded me of this hidden poetry.</p>
+
+      <p>I've also started learning basic front-end web development, including Javascript. I realized Javascript would be the perfect language to write this poetry generator in. The rest is history.</p>
+
+    </section>
+
+    <footer id="footer" class="hidden">
+      <span id="icons">
+        <span id="regularicons">
+          <a href="https://codepen.io/aidantjones/pen/RwPWrmp">
+            <img class="icons" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-112/codepen-logo.svg" title="View on Codepen" alt="Codepen logo">
+          </a>
+          <a href="https://github.com/aidantjones/quick-fox-lazy-dog">
+            <img class="icons" src="https://image.flaticon.com/icons/svg/23/23957.svg" title="View on GitHub" alt="GitHub logo">
+          </a>
+        </span>
+        <span id="CC" title="View applicable Creative Commons license" class="icons">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            <img src="assets/cc.svg" alt="Creative Commons logo">
+            <img src="assets/by.svg" alt="Creative Commons By logo">
+            <img src="assets/sa.svg" alt="Creative Commons Share Alike Logo">
+          </a>
+        </span>
+      </span>
+      <div id="copyright">
+        <div class="attribution">
+          <p><a href="https://thenounproject.com/term/fox/550657">“Fox” by Felix Brönnimann</a> and <a href="https://thenounproject.com/term/sleeping-dog/2158938">“Sleeping Dog” by Amanda Wray</a>, from the Noun Project.
+          <br>
+          <a href="https://fonts.google.com/specimen/Sorts+Mill+Goudy">Sorts Mill Goudy</a>, <a href="https://fonts.google.com/specimen/Anonymous+Pro">Anonymous Pro</a>, and <a href="https://fonts.adobe.com/fonts/kepler">Kepler Standard</a> fonts used.
+          <br>
+          Background sourced from <a href="https://git-scm.com/">Git's</a> homepage.
+        </p>
+        </div>
+        <p>Made by <a href="https://www.aijo.info">Aidan Jones</a></p>
+        <a id="dog" href="#top"><img class="icons" title="Click for a functional surprise ;)" src="assets/dog.svg" alt="Sleeping dog icon"></a>
+      </div>
+    </footer>
+  </body>
 </html>
